@@ -1,0 +1,245 @@
+@font-face {
+    src: url("../fonts/SF-Pro-Display-Regular.otf");
+    font-family: SF-Display-Regular;
+}
+
+@font-face {
+    src: url("../fonts/SF-Pro-Display-Thin.otf");
+    font-family: SF-Pro-Thin;
+}
+
+body {
+    font-family: SF-Display-Regular, sans-serif;
+    user-select: none;
+}
+
+
+[top] {
+    color: white;
+}
+
+[rad] {
+    display: inline-block;
+    position: relative;
+    bottom: 3px;
+    left: 15px;
+}
+
+
+    .calculator-normal {
+        background: #000;
+        width: 400px;
+        padding: 0px 15px 30px 15px;
+        transition: 0.3s;
+        overflow: hidden;
+    }
+
+    .calculator-normal [rad] {
+        display: none;
+    }
+
+    .calculator-scientific {
+        background: #000;
+        display: inline-block;
+        width: 1065px;
+        padding: 0px 15px 30px 15px;
+        transition: 0.3s;
+        overflow: hidden;
+    }
+
+    .button-normal {
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        font-size: 45px;
+        height: 87px;
+        width: 87px;
+        justify-content: center;
+    }
+
+        .button-normal img {
+            height: 28px;
+        }
+
+        .button-normal.function {
+            font-size: 36px;
+        }
+
+        .button-normal.span-two {
+            border-radius: 55px;
+            grid-column: 1 / span 2;
+            justify-content: flex-start;
+            padding-left: 33px;
+            width: 162px;
+        }
+
+    .button-scientific {
+        align-items: center;
+        border-radius: 40px;
+        cursor: pointer;
+        display: flex;
+        font-size: 35px;
+        height: 67px;
+        width: 87px;
+        justify-content: center;
+        transition: 0.3s;
+    }
+        .button-scientific.scientific {
+            font-size: 20px;
+        }
+
+        .button-scientific img {
+            height: 18px;
+        }
+
+        .button-scientific.function {
+            font-size: 26px;
+        }
+
+        .button-scientific.span-two {
+            border-radius: 55px;
+            grid-column: 7 / span 2;
+            justify-content: flex-start;
+            padding-left: 33px;
+            width: 162px;
+        }
+
+        sup {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        sub {
+            margin-bottom: -10px;
+            font-size: 13px;
+        }
+        
+
+
+    /* BUTTON GRID */
+
+    .button-grid-normal {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        transition: 0.3s;
+    }
+
+    .button-grid-scientific {
+        display: grid;
+        grid-gap: 15px;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        transition: 0.3s;
+    }
+
+
+    .display-normal {
+        color: white;
+        text-align: right;
+        font-size: 120px;
+        margin-right: 10px;
+        font-family: SF-Pro-Thin;
+        user-select: text;
+        height: 140px;
+        line-height: 140px;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    .display-scientific {
+        color: white;
+        text-align: right;
+        font-size: 120px;
+        margin-right: 10px;
+        font-family: SF-Pro-Thin;
+        user-select: text;
+        height: 140px;
+        line-height: 140px;
+        position: relative;
+        vertical-align: middle;
+    }
+
+    ::selection {
+        background: #111;
+      }
+
+
+
+    /* COLORS */
+    .number {background: #333; color: #fff}
+        .number:active {background: #737373}
+
+    .operation {background: #ff9f0a; color: #fff}
+    .operation img {filter: invert()}
+        .operation.selected {background: #fff;}
+        .operation.selected img {filter: brightness(0.5) invert(.7) sepia(20) hue-rotate(0deg) saturate(500%);}
+
+
+
+        .operation:active {background: #fbc78d}
+    
+    .function {background: #a5a5a5}
+        .function:active {background: #d9d9d9}
+
+    .scientific {background: #212121; color: #fff}
+        .scientific.selected {background: #7f7f7f; color: black}
+        .scientific.selected img {filter: invert()}
+        .scientific:active {background: #737373}
+
+
+        .form-switch {
+            display: inline-block;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            -webkit-tap-highlight-color: transparent;
+          }
+          .form-switch i {
+            position: relative;
+            display: inline-block;
+            margin-right: .5rem;
+            width: 46px;
+            height: 26px;
+            background-color: #e6e6e6;
+            border-radius: 23px;
+            vertical-align: text-bottom;
+            transition: all 0.3s linear;
+          }
+          .form-switch i::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 42px;
+            height: 22px;
+            background-color: #fff;
+            border-radius: 11px;
+            transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+            transition: all 0.25s linear;
+          }
+          .form-switch i::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 22px;
+            height: 22px;
+            background-color: #212121;
+            border-radius: 11px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+            transform: translate3d(2px, 2px, 0);
+            transition: all 0.2s ease-in-out;
+          }
+
+          .form-switch:active i::after {
+            width: 28px;
+            transform: translate3d(2px, 2px, 0);
+
+          }
+          .form-switch:active input:checked + i::after { transform: translate3d(16px, 2px, 0); }
+          .form-switch input { display: none; }
+          .form-switch input:checked + i { background-color: #ff9f0a; }
+          .form-switch input:checked + i::before { transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);}
+          .form-switch input:checked + i::after { transform: translate3d(22px, 2px, 0);  background-color: white;}
